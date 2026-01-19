@@ -8,3 +8,5 @@ It uses ideas from the following works:
 The original model comes in an 8B variant, which is too large for me to train given my hardware constraints. Instead, this implementation uses a 1B variant, which is much smaller and can be trained on a single GPU. 
 
 BERT-based encoders have similar masked language modelling capabilities to Diffusion Langauge Models, but are much smaller and faster to train. I'll be using a BERT-based model in this implementation.
+
+It adds a frontend to visualize the reverse diffusion process.
