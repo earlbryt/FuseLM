@@ -15,16 +15,47 @@ body {
 @layer utilities {
   .grid-pattern {
     background-image: 
-      linear-gradient(rgba(0, 217, 217, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 217, 217, 0.1) 1px, transparent 1px);
-    background-size: 30px 30px;
+      linear-gradient(rgba(0, 255, 240, 0.03) 0.5px, transparent 0.5px),
+      linear-gradient(90deg, rgba(0, 255, 240, 0.03) 0.5px, transparent 0.5px);
+    background-size: 4px 4px;
   }
   
-  .glow-cyan {
-    box-shadow: 0 0 20px rgba(0, 217, 217, 0.3);
+  .diagonal-pattern {
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(0, 255, 240, 0.02) 10px,
+        rgba(0, 255, 240, 0.02) 11px
+      );
+  }
+  
+  .dots-pattern {
+    background-image: 
+      radial-gradient(circle, rgba(0, 255, 240, 0.04) 0.5px, transparent 0.5px);
+    background-size: 6px 6px;
+  }
+  
+  .wave-pattern {
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 8px,
+        rgba(0, 255, 240, 0.02) 8px,
+        rgba(0, 255, 240, 0.02) 9px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 20px,
+        rgba(0, 255, 240, 0.01) 20px,
+        rgba(0, 255, 240, 0.01) 21px
+      );
   }
   
   .text-glow {
-    text-shadow: 0 0 20px rgba(0, 217, 217, 0.5);
+    text-shadow: 0 0 30px rgba(0, 255, 240, 0.6);
   }
 }

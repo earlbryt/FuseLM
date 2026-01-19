@@ -2,182 +2,116 @@ import React from 'react'
 
 function App() {
   return (
-    <div className="min-h-screen bg-cyber-darker grid-pattern overflow-hidden">
-      {/* Header */}
-      <header className="border-b border-cyber-cyan/30 bg-cyber-dark/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-cyber-cyan/20 border-2 border-cyber-cyan rounded-lg flex items-center justify-center">
-              <span className="text-cyber-cyan text-xl font-bold">F</span>
-            </div>
-            <h1 className="text-cyber-cyan text-2xl font-bold tracking-wider">FUSELM</h1>
-          </div>
-          <div className="flex gap-4">
-            <button className="text-cyber-cyan hover:text-white transition-colors">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-              </svg>
-            </button>
-            <button className="text-cyber-cyan hover:text-white transition-colors">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </header>
+    <div className="h-screen bg-cyber-darker overflow-hidden flex flex-col">
+      <style>{`
+        ::-webkit-scrollbar {
+          display: none;
+        }
+        * {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-12">
+      <main className="flex-1 container mx-auto px-4 flex flex-col justify-center overflow-hidden grid-pattern">
         {/* Hero Section */}
-        <div className="text-center mb-16 space-y-6">
-          <div className="inline-block">
-            <span className="text-cyber-cyan text-sm font-semibold tracking-widest uppercase border border-cyber-cyan/50 px-4 py-2 rounded-full">
-              🤖 AI Research Project
-            </span>
-          </div>
-          <h2 className="text-5xl md:text-7xl font-bold text-white text-glow">
-            DIFFUSION
-            <br />
-            <span className="text-cyber-cyan">LANGUAGE MODEL</span>
+        <div className="text-center mb-8 space-y-4 dots-pattern">
+          <h2 className="text-4xl md:text-6xl font-bold text-cyber-cyan text-glow">
+            FuseLM
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto">
             A custom implementation of a Diffusion Language Model using BERT-based encoders
             with masked language modelling capabilities
           </p>
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-cyber-dark/50 border-2 border-cyber-cyan/30 rounded-lg p-6 hover:border-cyber-cyan transition-all glow-cyan hover:scale-105 transform duration-300">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-cyber-cyan/20 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                </svg>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 diagonal-pattern">
+          <div className="relative">
+            <div className="absolute inset-0 bg-cyber-cyan/20 border border-cyber-cyan translate-x-2 translate-y-2"></div>
+            <div className="relative bg-cyber-dark border border-cyber-cyan p-6 hover:border-cyber-cyan transition-all">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-cyber-cyan/20 flex items-center justify-center">
+                  <svg className="w-6 h-6 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm uppercase tracking-wider">Model Size</p>
+                  <p className="text-cyber-cyan text-2xl font-bold">1B</p>
+                </div>
               </div>
-              <div>
-                <p className="text-gray-400 text-sm uppercase tracking-wider">Model Size</p>
-                <p className="text-cyber-cyan text-2xl font-bold">1B</p>
-              </div>
+              <p className="text-gray-500 text-sm">Optimized for single GPU training</p>
             </div>
-            <p className="text-gray-500 text-sm">Optimized for single GPU training</p>
           </div>
 
-          <div className="bg-cyber-dark/50 border-2 border-cyber-cyan/30 rounded-lg p-6 hover:border-cyber-cyan transition-all glow-cyan hover:scale-105 transform duration-300">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-cyber-cyan/20 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+          <div className="relative">
+            <div className="absolute inset-0 bg-cyber-cyan/20 border border-cyber-cyan translate-x-2 translate-y-2"></div>
+            <div className="relative bg-cyber-dark border border-cyber-cyan p-6 hover:border-cyber-cyan transition-all">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-cyber-cyan/20 flex items-center justify-center">
+                  <svg className="w-6 h-6 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm uppercase tracking-wider">Architecture</p>
+                  <p className="text-cyber-cyan text-2xl font-bold">BERT</p>
+                </div>
               </div>
-              <div>
-                <p className="text-gray-400 text-sm uppercase tracking-wider">Architecture</p>
-                <p className="text-cyber-cyan text-2xl font-bold">BERT</p>
-              </div>
+              <p className="text-gray-500 text-sm">Masked language modelling</p>
             </div>
-            <p className="text-gray-500 text-sm">Masked language modelling</p>
           </div>
 
-          <div className="bg-cyber-dark/50 border-2 border-cyber-cyan/30 rounded-lg p-6 hover:border-cyber-cyan transition-all glow-cyan hover:scale-105 transform duration-300">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-cyber-cyan/20 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-                </svg>
+          <div className="relative">
+            <div className="absolute inset-0 bg-cyber-cyan/20 border border-cyber-cyan translate-x-2 translate-y-2"></div>
+            <div className="relative bg-cyber-dark border border-cyber-cyan p-6 hover:border-cyber-cyan transition-all">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-cyber-cyan/20 flex items-center justify-center">
+                  <svg className="w-6 h-6 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm uppercase tracking-wider">Process</p>
+                  <p className="text-cyber-cyan text-2xl font-bold">DIFFUSION</p>
+                </div>
               </div>
-              <div>
-                <p className="text-gray-400 text-sm uppercase tracking-wider">Process</p>
-                <p className="text-cyber-cyan text-2xl font-bold">DIFFUSION</p>
-              </div>
+              <p className="text-gray-500 text-sm">Reverse diffusion visualization</p>
             </div>
-            <p className="text-gray-500 text-sm">Reverse diffusion visualization</p>
           </div>
         </div>
 
         {/* Research Papers Section */}
-        <div className="bg-cyber-dark/30 border border-cyber-cyan/20 rounded-lg p-8 mb-12">
-          <h3 className="text-cyber-cyan text-xl font-bold mb-6 flex items-center gap-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-            RESEARCH FOUNDATIONS
-          </h3>
-          <div className="space-y-4">
-            <div className="border-l-2 border-cyber-cyan pl-4">
-              <p className="text-white font-semibold">Large Language Diffusion Models</p>
-              <p className="text-gray-500 text-sm">arxiv.org/abs/2502.09992</p>
-            </div>
-            <div className="border-l-2 border-cyber-cyan pl-4">
-              <p className="text-white font-semibold">LLaDA 1.5: Variance-Reduced Preference Optimization</p>
-              <p className="text-gray-500 text-sm">arxiv.org/abs/2505.19223</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-cyber-dark/50 border border-cyber-cyan/30 rounded-lg p-6 hover:border-cyber-cyan transition-all">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-cyber-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
+        <div className="wave-pattern">
+        <div className="relative">
+          <div className="absolute inset-0 bg-cyber-cyan/20 border border-cyber-cyan translate-x-2 translate-y-2"></div>
+          <div className="relative bg-cyber-dark border border-cyber-cyan p-4">
+            <h3 className="text-cyber-cyan text-lg font-bold mb-3 flex items-center gap-2">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              INSPIRATION
+            </h3>
+            <div className="space-y-2">
+              <div className="border-l-2 border-cyber-cyan pl-4">
+                <p className="text-white font-semibold">Large Language Diffusion Models</p>
+                <p className="text-gray-500 text-sm">arxiv.org/abs/2502.09992</p>
               </div>
-              <div>
-                <h4 className="text-white font-bold mb-2">Efficient Training</h4>
-                <p className="text-gray-400 text-sm">Optimized for single GPU training with 1B parameter model variant</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-cyber-dark/50 border border-cyber-cyan/30 rounded-lg p-6 hover:border-cyber-cyan transition-all">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-cyber-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-              </div>
-              <div>
-                <h4 className="text-white font-bold mb-2">Visual Diffusion</h4>
-                <p className="text-gray-400 text-sm">Interactive frontend to visualize the reverse diffusion process</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-cyber-dark/50 border border-cyber-cyan/30 rounded-lg p-6 hover:border-cyber-cyan transition-all">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-cyber-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              </div>
-              <div>
-                <h4 className="text-white font-bold mb-2">BERT Architecture</h4>
-                <p className="text-gray-400 text-sm">Leverages masked language modelling for faster training</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-cyber-dark/50 border border-cyber-cyan/30 rounded-lg p-6 hover:border-cyber-cyan transition-all">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-cyber-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-cyber-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                </svg>
-              </div>
-              <div>
-                <h4 className="text-white font-bold mb-2">Research-Based</h4>
-                <p className="text-gray-400 text-sm">Built on cutting-edge diffusion model research papers</p>
+              <div className="border-l-2 border-cyber-cyan pl-4">
+                <p className="text-white font-semibold">LLaDA 1.5: Variance-Reduced Preference Optimization</p>
+                <p className="text-gray-500 text-sm">arxiv.org/abs/2505.19223</p>
               </div>
             </div>
           </div>
         </div>
+        </div>
+
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-cyber-cyan/30 bg-cyber-dark/50 backdrop-blur-sm mt-16">
+      <footer className="border-t border-cyber-cyan bg-cyber-dark/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-6">
@@ -198,8 +132,8 @@ function App() {
               </button>
             </div>
             <div className="flex items-center gap-2 text-gray-500 text-sm">
-              <div className="w-2 h-2 bg-cyber-cyan rounded-full animate-pulse"></div>
-              <span>System Online</span>
+              <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
+              <span>In Development</span>
             </div>
           </div>
         </div>

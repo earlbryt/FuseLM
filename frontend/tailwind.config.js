@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'cyber-cyan': '#00D9D9',
-        'cyber-dark': '#0A0E1A',
+        'cyber-cyan': '#00FFF0',
+        'cyber-dark': '#1a1f2e',
         'cyber-darker': '#050810',
       },
     },
