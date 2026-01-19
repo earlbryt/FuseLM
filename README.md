@@ -1,4 +1,5 @@
-FuseLM is a custom implementation of a Diffusion Language Model
+FuseLM is a custom implementation of a Diffusion Language Model.
+
 It uses ideas from the following works:
 
 - Large Language Diffusion Models (https://arxiv.org/abs/2502.09992)
